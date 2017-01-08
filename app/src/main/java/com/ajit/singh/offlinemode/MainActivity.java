@@ -9,9 +9,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 
-import com.ajit.singh.offlinemode.receiver.NetworkStateChangeReceiver;
-
-import static com.ajit.singh.offlinemode.receiver.NetworkStateChangeReceiver.IS_NETWORK_AVAILABLE;
+import static com.ajit.singh.offlinemode.NetworkStateChangeMessenger.IS_NETWORK_AVAILABLE;
+import static com.ajit.singh.offlinemode.NetworkStateChangeMessenger.NETWORK_STATE_CHANGE_ACTION;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    IntentFilter intentFilter = new IntentFilter(NetworkStateChangeReceiver.NETWORK_AVAILABLE_ACTION);
+    IntentFilter intentFilter = new IntentFilter(NETWORK_STATE_CHANGE_ACTION);
     LocalBroadcastManager.getInstance(this).registerReceiver(new BroadcastReceiver() {
       @Override
       public void onReceive(Context context, Intent intent) {
