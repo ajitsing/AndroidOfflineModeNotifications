@@ -11,6 +11,7 @@
     android:icon="@mipmap/ic_launcher"
     android:label="@string/app_name"
     android:supportsRtl="true"
+    android:name=".App"
     android:theme="@style/AppTheme">
     <activity android:name=".MainActivity">
       <intent-filter>
@@ -18,14 +19,6 @@
         <category android:name="android.intent.category.LAUNCHER"/>
       </intent-filter>
     </activity>
-
-    <receiver
-      android:name="com.ajit.singh.offlinemode.receiver.NetworkStateChangeReceiver"
-      android:exported="false">
-      <intent-filter>
-        <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
-      </intent-filter>
-    </receiver>
   </application>
 
 </manifest>
